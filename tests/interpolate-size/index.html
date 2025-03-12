@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>interpolate-size 아코디언 애니메이션 (60개)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    /* interpolate-size 속성 (실제 브라우저 지원 여부는 미정) */
+    .accordion {
+      interpolate-size: allow-keywords;
+    }
+
+    .accordion-item {
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .accordion-header {
+      background: #eee;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .accordion-content {
+      padding: 10px;
+    }
+
+    .css-accordion .accordion-content {
+      overflow: hidden;
+      height: 0;
+      transition: height 0.3s ease;
+    }
+    .css-accordion .accordion-content.open {
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>interpolate-size 아코디언 (50개)</h1>
+
+  <h2>CSS (interpolate-size) 아코디언</h2>
+  <div class="accordion css-accordion">
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+        <p>interpolate-size 아코디언 테스트</p>
+        <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+        <p>interpolate-size 아코디언 테스트</p>
+        <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+        <p>interpolate-size 아코디언 테스트</p>
+        <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+        <p>interpolate-size 아코디언 테스트</p>
+        <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+     <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+        <p>interpolate-size 아코디언 테스트</p>
+        <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+        <p>interpolate-size 아코디언 테스트</p>
+        <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+        <p>interpolate-size 아코디언 테스트</p>
+        <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+        <p>interpolate-size 아코디언 테스트</p>
+        <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="this.nextElementSibling.classList.toggle('open')">아코디언</div>
+      <div class="accordion-content">
+      <p>interpolate-size 아코디언 테스트</p>
+      <img src="../../assets/test-image.png" alt="이미지">
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+</script>
+</html>
