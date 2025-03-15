@@ -1,74 +1,78 @@
-const puppeteer = require('puppeteer');
+const results = [];
+const { launch, emulateNetworkConditions, CPU_THROTTLING_RATE, TEST_COUNT } = require('../config.js');
 
-(async () => {
-  const NUM_TESTS = 20; // 반복 실행 횟수
-  const WAIT_TIME = 2000; 
-  const results = [];
+init();
 
+async function init() {
   // 1) 브라우저 런치
-  const browser = await puppeteer.launch({ headless: false });
-  const page = await browser.newPage();
+  const { browser, page } = await launch();
 
-  // 2) DevTools Protocol 세션 열기
+  // 2) DevTools Protocol 세션 열기 (LTE+CPU 제한)
   const client = await page.target().createCDPSession();
-  // 네트워크 이벤트 사용 가능하도록 설정
+
   await client.send('Network.enable');
+  await client.send('Network.emulateNetworkConditions', emulateNetworkConditions); // ▒▒▒ LTE 환경 시뮬레이션 ▒▒▒
+  await client.send('Emulation.setCPUThrottlingRate', { rate: CPU_THROTTLING_RATE });  // ▒▒▒ CPU Throttling ▒▒▒
 
-  // 3) 네트워크 제한 설정 (LTE 환경 가정)
-  await client.send('Network.emulateNetworkConditions', {
-    offline: false,
-    downloadThroughput: 1_250_000, // 약 10Mbps
-    uploadThroughput: 625_000,    // 약 5Mbps
-    latency: 50                   // 50ms
-  });
-
-  await client.send('Emulation.setCPUThrottlingRate', { rate: 4 });
-
-
-  // 4) 테스트할 웹 페이지 열기
-  // !! index.html 경로를 본인의 경로로 수정해주세요
+  // 3) 테스트할 웹 페이지 열기
   await page.goto('file:///Users/gjm/-JavaScript-vs.-CSS-interpolate-size/tests/interpolate-size/index.html');
 
-  // 5) 반복 테스트
-  for (let i = 0; i < NUM_TESTS; i++) {
-    console.log(`🔄 테스트 ${i + 1}/${NUM_TESTS} 실행...`);
+  for (let i = 0; i < TEST_COUNT; i++) {
+    await evaluateRunTime(page, i, TEST_COUNT);
+  }
+  await browser.close();
+  
+  const sum = results.reduce((acc, time) => acc + time, 0);
+  const average = sum / TEST_COUNT;
 
+  console.log('----------------------------------');
+  console.log(`📊 평균 애니메이션 종료 시점: ${average.toFixed(2)} ms`);
+  console.log(`📝 전체 결과: ${results.map(r => r.toFixed(2)).join(', ')} ms`);
+  console.log('----------------------------------');
+}
+
+async function  evaluateRunTime(page, i, totalCount) {
+    console.log(`🔄 테스트 ${i + 1}/${totalCount} 실행...`);
+
+    // 2-1) Performance 측정을 위해 새로운 실행 기록 시작
     await page.tracing.start({ path: `trace-${i + 1}.json`, screenshots: false });
 
-    // 아코디언 열기 시작 시간
+    // 2-2) 애니메이션 시작 시점 기록
     const startTime = performance.now();
 
-    // 6) 아코디언 헤더(50개) 모두 클릭 - 한꺼번에 열기
-    await page.$$eval('.css-accordion .accordion-header', headers => {
-      headers.forEach(header => header.click());
-    });
+    await page.evaluate(toggleAccordion);
 
-    // 고정 대기 (애니메이션 진행)
-    await new Promise(resolve => setTimeout(resolve, WAIT_TIME));
-
-    // 종료 시각
+    // 2-4) 모든 transition이 끝난 시점
     const endTime = performance.now();
     const duration = endTime - startTime;
     results.push(duration);
     console.log(`✅ 테스트 ${i + 1}: ${duration.toFixed(2)} ms`);
 
+    // 2-5) Performance 데이터 저장 종료
     await page.tracing.stop();
+    await page.evaluate(toggleAccordion);
+}
 
-    // 7) 아코디언 모두 닫기 (토글)
-    await page.$$eval('.css-accordion .accordion-header', headers => {
-      headers.forEach(header => header.click());
+
+function toggleAccordion(){
+  return new Promise((resolve) => {
+    const headers = document.querySelectorAll('.css-accordion .accordion-header');
+    const contents = document.querySelectorAll('.css-accordion .accordion-content');
+
+    headers.forEach(h => h.click());
+
+    let finishedCount = 0;
+    contents.forEach(content => {
+      const onTransitionEnd = (e) => {
+        if (e.propertyName === 'max-height' || e.propertyName === 'height') {
+          content.removeEventListener('transitionend', onTransitionEnd);
+          finishedCount++;
+          if (finishedCount === contents.length) {
+            resolve();
+          }
+        }
+      };
+      content.addEventListener('transitionend', onTransitionEnd);
     });
-
-    await new Promise(resolve => setTimeout(resolve, WAIT_TIME));
-  }
-
-  await browser.close();
-
-  // 8) 결과 출력
-  const sum = results.reduce((acc, time) => acc + time, 0);
-  const average = sum / NUM_TESTS;
-  console.log('----------------------------------');
-  console.log(`📊 평균 애니메이션 실행 시간: ${average.toFixed(2)} ms`);
-  console.log(`📝 전체 결과: ${results.map(r => r.toFixed(2)).join(', ')} ms`);
-  console.log('----------------------------------');
-})();
+  });
+}
